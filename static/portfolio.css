@@ -1,8 +1,6 @@
-
-
 body{
-    background-color: #152402;
-    color:rgb(5, 59, 9);
+    background-color: cornsilk;
+    color:black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -11,39 +9,28 @@ nav ul {
     justify-content: space-between;
     list-style-type: none;
     align-items: center;
-    padding: 12px; 
-}
+    padding: 12px; }
 
 nav a {
     font-size: 20px;
 }
 
 nav a:hover {
-    color: #1b2e05;
+    color: grey
 }
 
 a {
-    color: rgb(180, 45, 21);
-    text-decoration: none;
-}
-
-    body {
-        background-image: url('fundo4.jpg');
-        background-size: cover; 
-        background-position: center;    
-    }
-
-    h1 {
-        font-size:90px;
-        text-align: center;
-    }
-
+    color: teal;
+    text-decoration: none;}
     section ul{
         font-weight: bold;
         line-height: 0;
     }
-
     div ul {
-
         line-height: 1;
+    }
+
+header{
+        font-size:60px;
+        text-align: center;
     }

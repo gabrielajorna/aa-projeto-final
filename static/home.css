@@ -1,13 +1,13 @@
 body{
-    background-color: #152402;
-    color:rgb(0, 0, 0);
+    background-color: cornsilk;
+    color:black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-h1 {font-size: 170px;
+h1 {font-size: 100px;
     text-align: center;}
 
-    h2 {font-size: 80px;
+    h2 {font-size: 50px;
         text-align: center;
    }
 
@@ -28,21 +28,13 @@ h1 {font-size: 170px;
         padding: 12px; }
 
     nav a {
-        font-size: 30px;
+        font-size: 20px;
     }
     
     nav a:hover {
-        color: #84be42;
+        color: grey;
     }
 
     a {
-        color: rgb(180, 45, 21);
+        color: teal;
         text-decoration: none;}
-
-        body {
-            background-image: url('fundo.jpg');
-            background-size: cover; 
-            background-position: center; 
-  
-        }
-
