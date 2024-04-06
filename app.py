@@ -30,12 +30,12 @@ def noticias():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Notícias Insper</title>
+        <title>Conheça o Insper</title>
     </head>
     <body>
-        <h1>Fique por dentro</h1>
+        <h1>Conheça o Insper</h1>
         <p>
-        Confira as últimas notícias da instituição que trabalho - Insper:
+        Conheça as iniciativas do Insper, instituição em que estou me formando Jornalista de Dados:
         <ul>
     """
   for materia in raspar_insper(headers, url_insper):
