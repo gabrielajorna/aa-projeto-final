@@ -1,11 +1,6 @@
 from flask import Flask, render_template, url_for
 from scraping import raspar_insper
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
-}
-url_insper = "https://www.insper.edu.br/imprensa/"
-
 app=Flask(__name__)
 
 @app.route("/")
@@ -26,6 +21,11 @@ def contato():
 
 @app.route("/noticias")
 def noticias():
+  headers = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
+}
+  url_insper = "https://www.insper.edu.br/imprensa/"
+
   html = """
     <!DOCTYPE html>
     <html>
