@@ -14,7 +14,7 @@ def raspar_insper(headers, url_insper):
   for link in links_insper:
     link_insper = link.find('a').get('href')
     titulo = link.find('a').text.strip()
-    noticias_insper.append([titulo,link_insper])
+    noticias_insper.append({"titulo": titulo, "url": link_insper})
   return noticias_insper
 
 raspar_insper(headers, url_insper)

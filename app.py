@@ -39,7 +39,7 @@ def noticias():
         <ul>
     """
   for materia in raspar_insper(headers, url_insper):
-    html+= f'<li> <a href="{materia["links_insper"]}">{materia["titulo"]}</a> </li>'
+    html+= f'<li> <a href="{materia["url"]}">{materia["titulo"]}</a> </li>'
     html+= """
         </ul>
         </p>
