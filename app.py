@@ -28,15 +28,6 @@ def contato():
 
 @app.route("/noticias")
 def noticias():
-  smtp_server = "smtp-relay.brevo.com"
-  port = 587
-  email = os.environ['EMAIL']
-  password = os.environ['PASS'] 
-  remetente = "gabrielajorna@gmail.com"  
-  destinatarios = ["gabrielajorna@gmail.com"]  
-  titulo = "Conheça o Insper"
-  texto = html
-  
   headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
   }
@@ -63,6 +54,15 @@ def noticias():
     </html>
     """
     return html
+  
+  smtp_server = "smtp-relay.brevo.com"
+  port = 587
+  email = os.environ['EMAIL']
+  password = os.environ['PASS'] 
+  remetente = "gabrielajorna@gmail.com"  
+  destinatarios = ["gabrielajorna@gmail.com"]  
+  titulo = "Conheça o Insper"
+  texto = html
   
   server = smtplib.SMTP(smtp_server, port)  # Inicia a conexão com o servidor
   server.starttls()  # Altera a comunicação para utilizar criptografia
