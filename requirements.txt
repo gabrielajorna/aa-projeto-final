@@ -2,3 +2,7 @@ Flask
 gunicorn
 requests
 bs4
+smtplib
+email.mime
+getpass
+python-dotenv
