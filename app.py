@@ -3,7 +3,6 @@ from scraping import raspar_insper
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import getpass
 from dotenv import load_dotenv
 load_dotenv()
 import os
@@ -53,8 +52,6 @@ def noticias():
     </body>
     </html>
     """
-    return html
-  
   smtp_server = "smtp-relay.brevo.com"
   port = 587
   email = os.environ['EMAIL']
@@ -80,3 +77,5 @@ def noticias():
 
   # Envio do email
   server.sendmail(remetente, destinatarios, mensagem.as_string())
+
+  return html
