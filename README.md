@@ -26,12 +26,14 @@ def home():
 Obs: Para cada arquivo HTML criado, é necessário criar um @app.route com o nome dessa página, bem como devemos chamar o `return`dela
 
 ## Página dinâmica
+
 A rota "/noticias" chama uma função de WebScraping e toda vez que a página é acionada, notícias novas aparecerão. 
 Para ter sua página dinâmica: 
 - [ ] Crie um arquivo.py para o código de raspagem;
 - [ ] Dentro do arquivo.py principal do site, chame este outro arquivo, importando a função. 
 
-##Envio de e-mail
+## Envio de e-mail
+
 Ao acessar a página dinâmica, este código aciona o SMTP e envia um e-mail com todo conteúdo. Note que o e-mail de destinarário e remetende é definido dentro do app.py.
 Para ter o seu envio de e-mail:
 - [ ] Altere os e-mails para quem gostaria de enviar;
