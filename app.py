@@ -33,34 +33,34 @@ def noticias():
     url_insper = "https://www.insper.edu.br/imprensa/"
 
     html_template = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Conheça o Insper</title>
-    </head>
-    <body>
-        <h1>Conheça o Insper</h1>
-        <p>
-        Conheça as iniciativas do Insper, instituição em que estou me formando Jornalista de Dados:
-        <ul>
-    """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conheça o Insper</title>
+</head>
+<body>
+    <h1>Conheça o Insper</h1>
+    <p>
+    Conheça as iniciativas do Insper, instituição em que estou me formando Jornalista de Dados:
+    <ul>
+"""
     # Aqui você pode adicionar os itens raspatos na lista <ul> do HTML
     for materia in raspar_insper(headers, url_insper):
         html_template += f'<li> <a href="{materia["url"]}">{materia["titulo"]}</a> </li>'
 
     html_template += """
-        </ul>
-        </p>
-    </body>
-    </html>
-    """
+    </ul>
+    </p>
+</body>
+</html>
+"""
 
     smtp_server = "smtp-relay.brevo.com"
     port = 587
     email = os.environ['EMAIL']
     password = os.environ['PASS'] 
     remetente = "gabrielajorna@gmail.com"  
-    destinatarios = ["gabrielajorna@gmail.com"]  
+    destinatarios = ["gabrielajorna@gmail.com","alvarojusten@gmail.com"] 
     titulo = "Conheça o Insper"
     texto = html_template
   
