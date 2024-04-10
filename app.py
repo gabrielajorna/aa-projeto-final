@@ -27,12 +27,12 @@ def contato():
 
 @app.route("/noticias")
 def noticias():
-  headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
-  }
-  url_insper = "https://www.insper.edu.br/imprensa/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
+    }
+    url_insper = "https://www.insper.edu.br/imprensa/"
 
-  html = """
+    html_template = """
     <!DOCTYPE html>
     <html>
     <head>
@@ -44,38 +44,39 @@ def noticias():
         Conheça as iniciativas do Insper, instituição em que estou me formando Jornalista de Dados:
         <ul>
     """
-  for materia in raspar_insper(headers, url_insper):
-    html+= f'<li> <a href="{materia["url"]}">{materia["titulo"]}</a> </li>'
-    html+= """
+    # Aqui você pode adicionar os itens raspatos na lista <ul> do HTML
+    for materia in raspar_insper(headers, url_insper):
+        html_template += f'<li> <a href="{materia["url"]}">{materia["titulo"]}</a> </li>'
+
+    html_template += """
         </ul>
         </p>
     </body>
     </html>
     """
-  smtp_server = "smtp-relay.brevo.com"
-  port = 587
-  email = os.environ['EMAIL']
-  password = os.environ['PASS'] 
-  remetente = "gabrielajorna@gmail.com"  
-  destinatarios = ["gabrielajorna@gmail.com"]  
-  titulo = "Conheça o Insper"
-  texto = html
+
+    smtp_server = "smtp-relay.brevo.com"
+    port = 587
+    email = os.environ['EMAIL']
+    password = os.environ['PASS'] 
+    remetente = "gabrielajorna@gmail.com"  
+    destinatarios = ["gabrielajorna@gmail.com"]  
+    titulo = "Conheça o Insper"
+    texto = html_template
   
-  server = smtplib.SMTP(smtp_server, port)  # Inicia a conexão com o servidor
-  server.starttls()  # Altera a comunicação para utilizar criptografia
-  server.login(email, password)  # Autentica
+    server = smtplib.SMTP(smtp_server, port)  # Inicia a conexão com o servidor
+    server.starttls()  # Altera a comunicação para utilizar criptografia
+    server.login(email, password)  # Autentica
 
-  # Preparando o objeto da mensagem
-  mensagem = MIMEMultipart()
-  mensagem["From"] = remetente
-  mensagem["To"] = ",".join(destinatarios)
-  mensagem["Subject"] = titulo
-  conteudo_texto = MIMEText(texto, "plain")  # Adiciona a versão de "texto puro"
-  conteudo_html = MIMEText(html, "html")  # Adiciona a versão em HTML
-  mensagem.attach(conteudo_texto)
-  mensagem.attach(conteudo_html)
+    # Preparando o objeto da mensagem
+    mensagem = MIMEMultipart()
+    mensagem["From"] = remetente
+    mensagem["To"] = ",".join(destinatarios)
+    mensagem["Subject"] = titulo
+    conteudo_html = MIMEText(html_template, "html")  # Adiciona a versão em HTML
+    mensagem.attach(conteudo_html)
 
-  # Envio do email
-  server.sendmail(remetente, destinatarios, mensagem.as_string())
+    # Envio do email
+    server.sendmail(remetente, destinatarios, mensagem.as_string())
 
-  return html
+    return html_template
