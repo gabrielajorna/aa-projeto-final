@@ -1,25 +1,28 @@
-body{
+body {
     background-color: lightgrey;
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
 }
-ul{
+
+nav ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     list-style-type: none;
     align-items: center;
     padding: 16px;
 }
-a{
+
+nav a {
     color: grey;
     text-decoration: none;
 }
-.center{
+
+.center {
     text-align: center;
 }
 
 header {
-    font-size:60px;
+    font-size: 60px;
     text-align: center;
 }
