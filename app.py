@@ -52,30 +52,30 @@ def noticias():
     </body>
     </html>
     """
-  smtp_server = "smtp-relay.brevo.com"
-  port = 587
-  email = os.environ['EMAIL']
-  password = os.environ['PASS'] 
-  remetente = "gabrielajorna@gmail.com"  
-  destinatarios = ["gabrielajorna@gmail.com"]  
-  titulo = "Conheça o Insper"
-  texto = html
+    smtp_server = "smtp-relay.brevo.com"
+    port = 587
+    email = os.environ['EMAIL']
+    password = os.environ['PASS'] 
+    remetente = "gabrielajorna@gmail.com"  
+    destinatarios = ["gabrielajorna@gmail.com"]  
+    titulo = "Conheça o Insper"
+    texto = html
   
-  server = smtplib.SMTP(smtp_server, port)  # Inicia a conexão com o servidor
-  server.starttls()  # Altera a comunicação para utilizar criptografia
-  server.login(email, password)  # Autentica
+    server = smtplib.SMTP(smtp_server, port)  # Inicia a conexão com o servidor
+    server.starttls()  # Altera a comunicação para utilizar criptografia
+    server.login(email, password)  # Autentica
 
-  # Preparando o objeto da mensagem
-  mensagem = MIMEMultipart()
-  mensagem["From"] = remetente
-  mensagem["To"] = ",".join(destinatarios)
-  mensagem["Subject"] = titulo
-  conteudo_texto = MIMEText(texto, "plain")  # Adiciona a versão de "texto puro"
-  conteudo_html = MIMEText(html, "html")  # Adiciona a versão em HTML
-  mensagem.attach(conteudo_texto)
-  mensagem.attach(conteudo_html)
+    # Preparando o objeto da mensagem
+    mensagem = MIMEMultipart()
+    mensagem["From"] = remetente
+    mensagem["To"] = ",".join(destinatarios)
+    mensagem["Subject"] = titulo
+    conteudo_texto = MIMEText(texto, "plain")  # Adiciona a versão de "texto puro"
+    conteudo_html = MIMEText(html, "html")  # Adiciona a versão em HTML
+    mensagem.attach(conteudo_texto)
+    mensagem.attach(conteudo_html)
 
-  # Envio do email
-  server.sendmail(remetente, destinatarios, mensagem.as_string())
+    # Envio do email
+    server.sendmail(remetente, destinatarios, mensagem.as_string())
 
   return html
