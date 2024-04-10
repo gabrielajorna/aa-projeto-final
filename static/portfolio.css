@@ -1,6 +1,6 @@
-body{
-    background-color: cornsilk;
-    color:black;
+body {
+    background-color: lightgrey;
+    color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -9,28 +9,32 @@ nav ul {
     justify-content: space-between;
     list-style-type: none;
     align-items: center;
-    padding: 12px; }
+    padding: 12px;
+}
 
 nav a {
     font-size: 20px;
 }
 
 nav a:hover {
-    color: grey
+    color: black;
 }
 
 a {
     color: teal;
-    text-decoration: none;}
-    section ul{
-        font-weight: bold;
-        line-height: 0;
-    }
-    div ul {
-        line-height: 1;
-    }
+    text-decoration: none;
+}
 
-header{
-        font-size:60px;
-        text-align: center;
-    }
+section ul {
+    font-weight: bold;
+    line-height: 0;
+}
+
+div ul {
+    line-height: 1;
+}
+
+header {
+    font-size: 60px;
+    text-align: center;
+}

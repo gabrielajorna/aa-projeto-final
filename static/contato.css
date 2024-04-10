@@ -1,6 +1,6 @@
 body{
-    background-color: cornsilk;
-    color: rgb(13, 46, 4);
+    background-color: lightgrey;
+    color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
 }
@@ -22,11 +22,4 @@ a{
 header {
     font-size:60px;
     text-align: center;
-}
-
-
-body {
-    background-image: url('fundo5.jpg');
-    background-size: cover; 
-    background-position: center; 
 }
